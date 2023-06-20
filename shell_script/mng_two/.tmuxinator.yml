@@ -1,0 +1,9 @@
+name: manager
+root: ./
+startup_window: drivers
+pre_window: source ~/tello_ws/devel/setup.bash
+windows:
+  - drivers:
+      layout: tiled
+      panes:
+        - sleep 1; rosrun tello_control manager_two_node

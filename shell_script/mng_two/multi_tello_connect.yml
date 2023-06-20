@@ -1,0 +1,10 @@
+name: multi_tello_connect
+root: ./
+startup_window: drivers
+pre_window: source ~/tello_ws/devel/setup.bash
+windows:
+  - drivers:
+      layout: tiled
+      panes:
+        - sleep 3; roslaunch tello_driver tello_node_ID1.launch
+        - sleep 6; roslaunch tello_driver tello_node_ID8.launch

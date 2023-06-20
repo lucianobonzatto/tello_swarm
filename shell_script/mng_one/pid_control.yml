@@ -1,0 +1,14 @@
+name: pid_control
+root: ./
+startup_window: tello_drive
+windows:
+  - tello_drive:
+      layout: tiled
+      panes:
+        - sleep 2; roslaunch tello_driver tello_node_ID1.launch
+        - sleep 5; roslaunch tello_control pid1_control.launch
+
+  - tello_drive:
+      layout: tiled
+      panes:
+        - sleep 5;rosparam set /tello_ID1/tello_ID1_driver_node/vel_cmd_scale 1

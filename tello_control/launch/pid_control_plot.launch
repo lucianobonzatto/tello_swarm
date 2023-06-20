@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="tello_control" name="pid_tello_1" type="pid_control_node" output="screen">
+		<param name="constante_P" value="0.5" />
+		<param name="constante_I" value="0.5" />
+		<param name="constante_D" value="0.5" />
+		<param name="constante_P_Z" value="0.5" />
+		<param name="constante_I_Z" value="0.5" />
+		<param name="constante_D_Z" value="0.5" />
+	</node>
+	<node name="rqt_plot_position_x" pkg="rqt_plot" type="rqt_plot"
+    		args="/pid_control/goto/position/x /ar_pose_marker/markers[0]/pose/pose/position/x" />
+
+	<node name="rqt_plot_position_y" pkg="rqt_plot" type="rqt_plot"
+    		args="/pid_control/goto/position/y /ar_pose_marker/markers[0]/pose/pose/position/y" />
+
+	<node name="rqt_plot_position_z" pkg="rqt_plot" type="rqt_plot"
+    		args="/pid_control/goto/position/z /ar_pose_marker/markers[0]/pose/pose/position/z" />
+
+</launch>

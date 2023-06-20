@@ -1,0 +1,9 @@
+name: tello_control
+root: ./
+startup_window: tello_manager
+windows:
+  - tello_menager:
+      layout: tiled
+      panes:
+        - sleep 2; rosrun tello_control manager_node
+  

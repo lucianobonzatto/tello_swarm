@@ -1,0 +1,14 @@
+name: pid_ar_tracker
+root: ./
+startup_window: drivers
+pre_window: source ~/tello_ws/devel/setup.bash
+windows:
+  - ar_tracker:
+      layout: tiled
+      panes:
+        - sleep 4; roslaunch tello_control ar_track.launch
+  - pid:
+      layout: tiled
+      panes:
+        - sleep 1; roslaunch tello_control pid1_control.launch
+        - sleep 10; roslaunch tello_control pid8_control.launch

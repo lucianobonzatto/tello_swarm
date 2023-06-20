@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="namespace_1"	default="tello_ID8" />
+	<group ns="$(arg namespace_1)">
+		<node pkg="tello_control" name="pid_control" type="pid_control_node" output="screen">
+			<param name="constante_P" value="1.15" />
+			<param name="constante_I" value="0.001" />
+			<param name="constante_D" value="20" />
+			<param name="constante_P_Z" value="0.8" />
+			<param name="constante_I_Z" value="0.01" />
+			<param name="constante_D_Z" value="0.3" />
+			<param name="DIST_MAX" value="0.1" />
+			<param name="TAG_ID" value="8" />
+		</node>
+	</group>
+</launch>

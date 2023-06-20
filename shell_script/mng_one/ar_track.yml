@@ -1,0 +1,20 @@
+name: ar_track
+root: ./
+startup_window: echo_arPose
+pre_window: source ~/tello_ws/devel/setup.bash
+windows:
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+  - ar_track:
+      layout: tiled
+      panes:
+        - sleep 2; roslaunch tello_control ar_track.launch
+        - sleep 2; rqt_image_view
+  - echo_arPose:
+      layout: tiled
+      panes:
+        - sleep 2; rostopic echo /ar_pose_marker
+        
+  
